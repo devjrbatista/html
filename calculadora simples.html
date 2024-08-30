@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Calculadora Simples</title>
+  <script>
+    function soma(event) {
+      event.preventDefault();
+      var numero1 = parseFloat(document.getElementById("numero1").value);
+      var numero2 = parseFloat(document.getElementById("numero2").value);
+      var resultado = numero1 + numero2;
+      alert(numero1 + " " + "+" + " " + numero2 + " " + "=" + " " + resultado);
+    }
+  </script>
+</head>
+<body>
+  <h3>Calculadora Simples</h3>
+  <form>
+    <input type="number" name="numero1" id="numero1" value="0"/>
+    <br>
+    <input type="number" name="numero2" id="numero2" value="0"/>
+    <br>
+    <button onclick="soma(event)">Somar</button>
+  </form>
+</body>
+</html>

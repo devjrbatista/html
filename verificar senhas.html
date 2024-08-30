@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Cadastro de usuário</title>
+</head>
+<body>
+  <h3>Cadastro de usuário</h3>
+  <form id="cadastroForm" onsubmit="return verificarSenhas()">
+    <label for="nome">Nome</label>
+    <br>
+    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required/>
+    <br>
+    <label for="email">E-mail</label>
+    <br>
+    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required />
+    <br>
+    <label for="senha">Senha</label>
+    <br>
+    <input type="password" name="senha" id="senha" placeholder="*********" required/>
+    <br>
+    <label for="confirmarSenha">Confirmar senha</label>
+    <br>
+    <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="*********" required/>
+    <br>
+    <div id="erroSenha"></div>
+    <input type="submit" value="Cadastrar"/>
+    <br>
+  </form>
+
+  <script>
+        function verificarSenhas() {
+            var senha = document.getElementById('senha').value;
+            var confirmarSenha = document.getElementById('confirmarSenha').value;
+            var erroSenha = document.getElementById('erroSenha');
+
+            if (senha !== confirmarSenha) {
+                erroSenha.textContent = "As senhas não coincidem!";
+                return false;
+            }
+            erroSenha.textContent = ""; // Limpa a mensagem de erro se as senhas coincidirem
+            return true;
+        }
+    </script>
+
+</body>
+</html>
